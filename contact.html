@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Contact Landmark International School for admissions, inquiries, or support." />
+  <meta name="keywords" content="Landmark International School, contact, admissions, support, inquiries" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Landmark International School</title>
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background: #f4f7fa;
+    color: #1c3d6b;
+    line-height: 1.6;
+  }
+
+  header.hero {
+    background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(20, 80, 149, 0.3);
+    margin: 2rem auto 4rem;
+    max-width: 1100px;
+  }
+
+  header.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1s ease forwards;
+  }
+
+  header.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cbd7eb;
+    font-weight: 500;
+    line-height: 1.6;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.navbar li a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar li a:hover {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: whitesmoke;
+}
+
+/* Links */
+a {
+  color: #88212b;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+  main.container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+  }
+
+  .contact-info {
+    background: linear-gradient(135deg, #e3f1df 0%, #d1ead1 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    color: #216e39;
+  }
+
+  .contact-info h2 {
+    color: #952647;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info p {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+  }
+
+  .contact-info strong {
+    display: inline-block;
+    width: 100px;
+  }
+
+  form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+
+  form h2 {
+    font-size: 2rem;
+    color: #952647;
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #88212b;
+    outline: none;
+    box-shadow: 0 0 6px rgba(136, 33, 43, 0.4);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button[type="submit"] {
+    background-color: #88212b;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  button:hover {
+    background-color: #b75e7e;
+    box-shadow: 0 6px 20px rgba(183, 94, 126, 0.6);
+  }
+
+  .map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    height: 350px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 2rem;
+  }
+
+  .social-links a {
+    color: #88212b;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #b75e7e;
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 480px) {
+    header.hero h1 {
+      font-size: 2.5rem;
+    }
+
+    main.container {
+      padding: 1rem;
+    }
+
+    .navbar {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .social-links {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Contact Us</h1>
+    <p>Get in touch with Landmark International School for admissions, questions, or support. We are here to assist you.</p>
+      <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="hostel.html">Hostel</a></li> 
+        <li><a href="programs.html">Programs Offered</a></li>
+      </ul>
+  </header>
+
+  <main class="container">
+    
+    <section class="contact-info" aria-label="Contact Information">
+      <h2>Our Contact Details</h2>
+      <p><strong>Address:</strong>KM Stone - 08, Gohana-Rohtak Rd, Gohana, Haryana 131301</p>
+      <p><strong>Phone:</strong>+9108222095561</p>
+      <p><strong>Email:</strong> <a href="mailto:info@landmarkschool.edu">info@landmarkschool.edu</a></p>
+      <p><strong>Office Hours:</strong><br> Monday, 8 am–2 pm <br>Tuesday, 8 am–2 pm <br>Wednesday, 8 am–2 pm <br>Thursday, 8 am–2 pm <br>Friday, 8 am–2 pm <br>Saturday, 8 am–2 pm</p>
+    </section>
+
+
+
+    <section aria-label="Map Location">
+      <div class="map-container">
+        <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1032.2956517491061!2d76.68094552847205!3d29.065465219524587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d92518331e807%3A0x3fe4e634a3d6a067!2sLandmark%20International%20School!5e1!3m2!1sen!2sin!4v1748333273112!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+      </div>
+    </section>
+    
+
+    <section aria-label="Contact Form">
+      <form id="contactForm" novalidate>
+        <h2>Send Us a Message</h2>
+
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="example@domain.com" />
+
+        <label for="subject">Subject *</label>
+        <input type="text" id="subject" name="subject" required placeholder="Message subject" />
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required placeholder="Write your message here"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="social-links" aria-label="Social media links">
+      <a href="https://facebook.com/landmarkinternationalschool" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/landmarkschool" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/landmarkinternationalschool" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/company/landmark-international-school" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </section>
+
+  </main>
+
+  <script>
+    // Basic client-side validation and form submission simulation
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        alert('Please fill in all required fields correctly.');
+        form.reportValidity();
+        return;
+      }
+
+      // Simulate successful submission
+      alert('Thank you for contacting Landmark International School. We will get back to you shortly.');
+
+      // Reset the form
+      form.reset();
+    });
+  </script>
+</body>
+</html>

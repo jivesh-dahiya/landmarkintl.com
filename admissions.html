@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Official website of Landmark International School. Find information about admissions, campus life, and academic programs.">
+    <meta name="keywords" content="Landmark International School, education, admissions, campus life, programs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Landmark International School</title>
+    
+<style>
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.navbar li a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar li a:hover {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: whitesmoke;
+}
+
+/* Links */
+a {
+  color: #88212b;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+header.hero {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: white;
+  padding: 100px 40px 70px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(20, 80, 149, 0.3);
+  margin: 0 auto 60px;
+  max-width: 1250px;
+  animation: slideDownFade 1s ease forwards;
+}
+
+header.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+header.hero p {
+  font-size: 1.3rem;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #cbd7eb;
+  font-weight: 500;
+  line-height: 1.7;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Container */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  box-sizing: border-box;
+}
+
+/* Sections */
+section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px;
+  padding: 20px;
+  max-width: 100%;
+  animation: slideDownFade 1s ease forwards;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section h2 {
+  font-size: larger;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #750b42;
+  border-bottom: 2px solid #6e0638;
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  max-width: 1240px;
+  margin: 0 auto 16px;
+  text-align: center;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+section h2::after {
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 1px;
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 4px;
+  width: 100px;
+  border-radius: 4px;
+  background: #670647;
+  box-shadow: 0 2px 10px rgba(92, 6, 44, 0.45);
+  transition: width 0.3s ease;
+}
+
+section p {
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #7b0a1e;
+  max-width: 1240px;
+  margin: 0 auto 18px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+section p:hover {
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: #fff;
+  border: 1px solid #500522;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(113, 3, 73, 0.2);
+}
+
+/* Lists */
+ul, ol {
+    letter-spacing: 1px;
+  max-width: 1240px;
+  margin: 10px auto 20px;
+  padding-left: 20px;
+  font-size: large;
+  font-weight: bold;
+  color: #520a20;
+  list-style-position: inside;
+  transition: all 0.3s ease;
+}
+
+ul:hover, ol:hover {
+    letter-spacing: 1px;
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  font-size: large;
+  font-weight: bold;
+  color: #fff;
+  font-style: italic;
+  box-shadow: 0 2px 10px rgba(58, 134, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #0a2342;
+  cursor: pointer;
+}
+
+/* Image Container for Fee Structure */
+.image-container {
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(110, 3, 78, 0.823);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Campus Images */
+.campus-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.campus-images img {
+  width: 30%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.campus-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(107, 7, 54, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2.6rem;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+  p, ul, ol {
+    font-size: 1rem;
+  }
+  .campus-images img {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Admissions</h1>
+        <p>Welcome to the Admissions page of Landmark International School. Here, you will find all the information you need to apply for admission to our esteemed institution.</p>
+         <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="hostel.html">Hostel Details</a></li>
+        <li><a href="programs.html">Programs offered</a></li>
+      </ul>
+    </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Admission Process</h2>
+            <p>Our admission process is designed to be straightforward and transparent. We encourage prospective students and their families to review the following steps:</p>
+            <ul>
+                <li>Complete the online application form available on our website.</li>
+                <li>Submit the required documents, including previous academic records, recommendation letters, and identification proof.</li>
+                <li>Attend an interview with our admissions committee.</li>
+                <li>Receive notification of admission status via email.</li>
+                <li>Complete the enrollment process, including payment of fees and submission of additional documents.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fee Structure</h2>
+            <p>Our fee structure is designed to be competitive and transparent. We offer various payment plans to accommodate different financial situations. For detailed information on tuition fees, please refer to the fee structure document available on our website below.</p>
+            <div class="image-container">
+                <img src="fee.jpeg" alt="Fee Structure Document" />
+            </div>
+        </section>
+
+        <section>
+            <h2>Eligibility Criteria</h2>
+            <p>To be eligible for admission, students must meet the following criteria:</p>
+            <ul>
+                <li>Age requirements as per the grade level.</li>
+                <li>Minimum academic performance standards.</li>
+                <li>Submission of all required documents by the specified deadlines.</li>
+                <li>Participation in the admission interview process.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Programs Offered</h2>
+            <p>Landmark International School offers a wide range of academic programs, including:</p>
+            <ul>
+                <li>Primary Education (Grades 1-5)</li>
+                <li>Middle School (Grades 6-8)</li>
+                <li>High School (Grades 9-12)</li>
+                <li>Extracurricular Activities and Clubs</li>
+                <li>Specialized Programs (STEM, Arts, Sports)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Campus Tours</h2>
+            <p>We invite prospective students and their families to visit our campus. Campus tours are available by appointment. Please contact our admissions office to schedule a tour and experience our facilities firsthand.</p>
+            <div class="campus-images">
+                <img src="class1.jpeg" alt="Fee Structure Document" />
+                <img src="build3.jpeg" alt="Fee Structure Document" />
+                <img src="buil2.jpeg" alt="Fee Structure Document" />
+            </div>
+        </section>
+
+        <section>
+            <h2>Faculty</h2>
+            <p>Our faculty members are highly qualified and dedicated to providing quality education. They are committed to fostering a supportive and engaging learning environment for all students.Our faculty includes a number of good teachers and other staff with following suitablities-</p>
+            <ul>
+                <li>Experienced educators with advanced degrees in their respective fields.</li>
+                <li>Continuous professional development to stay updated with the latest teaching methodologies.</li>
+                <li>Personalized attention to students to ensure academic success and personal growth.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further assistance regarding the admissions process, please do not hesitate to contact our admissions office:</p>
+            <ul>
+                <li>Email: <a href="mailto:djivesh@gmail.com">djivesh@gmail.com</a></li>
+                <li>Phone: +9108222095561</li>
+                <li>Address:KM Stone - 08, Gohana-Rohtak Rd, Gohana, Haryana 131301</li>
+
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

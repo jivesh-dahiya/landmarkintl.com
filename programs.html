@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Official website of Landmark International School." />
+  <meta name="keywords" content="Landmark International School, education, admissions, campus life, programs" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs - Landmark International School</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f5fb;
+      color: #1c3d6b;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+   .navbar {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.navbar li a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar li a:hover {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: whitesmoke;
+}
+
+/* Links */
+a {
+  color: #88212b;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+a:hover::after {
+  width: 100%;
+}
+    /* Container */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Hero Section */
+    header.hero {
+      background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      color: #fff;
+      padding: 100px 40px 70px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 2px 15px rgba(20, 80, 149, 0.3);
+      margin-bottom: 60px;
+      max-width: 1250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header.hero h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header.hero p {
+      font-size: 1.3rem;
+      max-width: 750px;
+      margin: 0 auto;
+      color: #cbd7eb;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    /* Section base */
+    section {
+      margin-bottom: 80px;
+      max-width: 100%;
+    }
+    section h2 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      position: relative;
+      padding-bottom: 6px;
+      color: #7e0a2f;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100px;
+      border-radius: 4px;
+      background: #ff3aa0;
+      box-shadow: 0 2px 10px rgba(58, 134, 255, 0.45);
+    }
+    section p {
+      font-size: 1.125rem;
+      color: #720a26;
+      max-width: 1240px;
+      margin-bottom: 18px;
+      font-weight: 400;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Section with image + text layout */
+    .section-row {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px auto 0;
+      max-width: 1240px;
+    }
+    .section-row.reverse {
+      flex-direction: row-reverse;
+    }
+    .section-text {
+      flex: 1 1 520px;
+      max-width: 600px;
+      min-width: 300px;
+    }
+    .section-image {
+      flex: 1 1 450px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(107, 6, 45, 0.5);
+      overflow: hidden;
+      background: white;
+      transition: box-shadow 0.4s ease;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    .section-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #933638;
+      color: #fff;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      color: #5f0523;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Welcome to Landmark International School</h1>
+    <p>
+      Explore our diverse educational programs designed to foster growth and excellence.
+    </p>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="hostel.html">Hostel Details</a></li>
+        <li><a href="programs.html">Programs</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Primary Education</h2>
+          <p>
+            Our primary education program is designed to lay a strong foundation for young learners, focusing on essential skills in literacy, numeracy, and social development. We believe that the early years of education are crucial for fostering a lifelong love of learning. Our curriculum is tailored to engage students through interactive and hands-on activities that stimulate their curiosity and creativity. 
+          </p>
+          <p>
+            Additionally, our primary education program incorporates arts and physical education, promoting holistic development. We understand that children learn best when they are happy and engaged, so we create a nurturing environment where they feel safe to express themselves. Regular assessments help us track each child's progress, allowing us to provide targeted support where needed. 
+          </p>
+          <p>
+            By the end of their primary education, students are well-prepared for the challenges of secondary school, equipped with the foundational skills and confidence to succeed. Our goal is to instill a sense of curiosity and a passion for learning that will last a lifetime.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="primary.jpg" alt="Primary Education" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row reverse">
+        <div class="section-text">
+          <h2>Secondary Education</h2>
+          <p>
+            Our secondary education program is designed to prepare students for higher education and future careers. We offer a comprehensive curriculum that includes a wide range of subjects, such as science, mathematics, arts, and humanities. This diverse approach allows students to explore their interests and develop a well-rounded skill set. 
+          </p>
+          <p>
+            Our secondary education program emphasizes the importance of character development and social responsibility. We encourage students to become active members of their communities, fostering a sense of empathy and leadership. By the time they graduate, our students are not only academically prepared but also equipped with the skills and values needed to succeed in a rapidly changing world.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="secondary.jpg" alt="Secondary Education" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Science Stream</h2>
+          <p>
+            The Science Stream at Landmark International School offers an in-depth exploration of subjects such as Physics, Chemistry, and Biology. Our curriculum is designed to provide students with a solid understanding of scientific principles and methodologies. Through a combination of theoretical knowledge and practical applications, students develop critical thinking and analytical skills that are essential for success in the sciences. 
+          </p>
+          <p>
+            Students engage in laboratory experiments, research projects, and field studies that enhance their understanding of scientific concepts. Our experienced faculty members guide students through rigorous coursework, ensuring that they grasp complex ideas and can apply them in real-world contexts. We also emphasize the importance of collaboration and teamwork, encouraging students to work together on projects and experiments. 
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="science.jpg" alt="Science Stream" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row reverse">
+        <div class="section-text">
+          <h2>Commerce Stream</h2>
+          <p>
+            Our Commerce Stream provides students with essential knowledge in business, economics, and finance. This program is designed to prepare students for the dynamic world of commerce and entrepreneurship. Through a comprehensive curriculum, students gain a solid understanding of key concepts such as marketing, accounting, and business management. 
+          </p>
+         
+          <p>
+            Our Commerce Stream not only prepares students for higher education in business-related fields but also equips them with the skills and knowledge needed to succeed in a competitive job market. We believe that fostering a strong foundation in commerce is essential for developing the next generation of business leaders and innovators who will drive economic growth and social change.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="commerce.jpg" alt="Commerce Stream" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Arts Stream</h2>
+          <p>
+            The Arts Stream at Landmark International School encourages creativity and critical thinking through subjects like Literature, History, and Fine Arts. Our program is designed to foster an environment where students can express themselves and explore their passions. We believe that the arts play a vital role in developing well-rounded individuals who can think critically and communicate effectively. 
+          </p>
+          <p>
+            Our Arts Stream not only prepares students for higher education in creative fields but also instills a sense of empathy and social awareness. We believe that fostering a love for the arts is essential for developing the next generation of thinkers, creators, and leaders who will contribute to society in meaningful ways.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="arts.jpg" alt="Arts Stream" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Landmark International School. All rights reserved.</p>
+    <p>Follow us on <a href="https://www.facebook.com/greatInfrastructureSurroundedBySereneBeauty" target="_blank">Facebook</a></p>
+    <p>Designed by Landmark International School Web Team - JIVESH DAHIYA</p>
+  </footer>
+</body>
+</html>

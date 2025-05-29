@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Persistent School Photo Gallery - Landmark International School</title>
+<meta name="description" content="Explore the vibrant campus life and memorable moments of Landmark International School through our photo gallery.">
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #f4f7fa;
+  color: #88212b;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+header.hero {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  color: #fff;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 25px rgba(20, 80, 149, 0.3);
+  margin: 2rem auto 4rem;
+  max-width: 1100px;
+}
+header.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+header.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #cbd7eb;
+  font-weight: 500;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.navbar li a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar li a:hover {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: whitesmoke;
+}
+
+/* Links */
+a {
+  color: #88212b;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Upload Button */
+.upload-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 3rem;
+  max-width: 1100px;
+}
+.upload-button {
+  background: #88212b;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(28, 61, 107, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.upload-button:hover {
+  background: #b75e7e;
+  box-shadow: 0 8px 25px rgba(58, 134, 255, 0.3);
+}
+input[type="file"] {
+  display: none;
+}
+
+/* Gallery Grid */
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Gallery Items */
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Delete Button */
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 0, 0, 0.85);
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-item:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(28, 61, 107, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+.lightbox .close,
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.lightbox .close {
+  top: 2rem;
+  right: 2rem;
+  transform: none;
+}
+.lightbox .prev {
+  left: 1.5rem;
+}
+.lightbox .next {
+  right: 1.5rem;
+}
+.lightbox .close:hover,
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Accessibility */
+.delete-btn:focus,
+.close:focus,
+.prev:focus,
+.next:focus {
+  outline: 2px solid #3a86ff;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  header.hero h1 {
+    font-size: 2.5rem;
+  }
+  header.hero p {
+    font-size: 1rem;
+  }
+  .gallery-item img {
+    height: 140px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>School Photo Gallery</h1>
+  <p>Explore the campus life, activities, and memorable moments of Landmark International School through our curated photo gallery.</p><br>
+  <br>
+   <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="hostel.html">Hostel</a></li>
+        <li><a href="programs.html">Programs Offered</a></li>
+      </ul>
+    </nav>
+</header>
+
+<div class="upload-container">
+  <button class="upload-button" id="uploadBtn" aria-label="Add Images to Gallery">Add Images</button>
+  <input type="file" id="fileInput" accept="image/*" multiple aria-hidden="true" />
+</div>
+
+<main>
+  <section class="gallery" aria-label="School photo gallery">
+    <!-- Images will be populated here by JavaScript -->
+  </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="close" aria-label="Close gallery" title="Close">&times;</button>
+  <button class="prev" aria-label="Previous image" title="Previous">&#10094;</button>
+  <img src="" alt="" />
+  <button class="next" aria-label="Next image" title="Next">&#10095;</button>
+</div>
+
+<script>
+(() => {
+  const gallery = document.querySelector('.gallery');
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = lightbox.querySelector('.close');
+  const prevBtn = lightbox.querySelector('.prev');
+  const nextBtn = lightbox.querySelector('.next');
+  const fileInput = document.getElementById('fileInput');
+  const uploadBtn = document.getElementById('uploadBtn');
+
+  let images = [];
+  let currentIndex = -1;
+
+  // Load images from localStorage
+  function loadImages() {
+    const stored = localStorage.getItem('schoolGalleryImages');
+    if(stored) {
+      try {
+        images = JSON.parse(stored);
+      } catch(e) {
+        images = [];
+      }
+    } else {
+      // Initialize with some default images as fallback
+      images = [
+        {
+          src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
+          alt: "Students collaborating in classroom"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80",
+          alt: "Students playing football on field"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80",
+          alt: "School campus exterior"
+        }
+      ];
+      saveImages(); // persist defaults
+    }
+  }
+
+  // Save images array to localStorage
+  function saveImages() {
+    localStorage.setItem('schoolGalleryImages', JSON.stringify(images));
+  }
+
+  // Render gallery in DOM
+  function renderGallery() {
+    gallery.innerHTML = '';
+    images.forEach((imgObj, index) => {
+      const item = document.createElement('div');
+      item.classList.add('gallery-item');
+      item.tabIndex = -1;
+      item.innerHTML = `
+        <img src="${imgObj.src}" alt="${imgObj.alt || 'Gallery image'}" tabindex="0" />
+        <button class="delete-btn" aria-label="Delete image">&times;</button>
+      `;
+      gallery.appendChild(item);
+
+      const img = item.querySelector('img');
+      const deleteBtn = item.querySelector('.delete-btn');
+
+      img.addEventListener('click', () => openLightbox(index));
+      img.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      });
+      deleteBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        deleteImage(index);
+      });
+      deleteBtn.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          deleteBtn.click();
+        }
+      });
+    });
+  }
+
+  // Delete image from array and update gallery/localStorage
+  function deleteImage(index) {
+    images.splice(index, 1);
+    saveImages();
+    renderGallery();
+    if (lightbox.classList.contains('active')) {
+      // If lightbox open on deleted image, close or update
+      if (currentIndex === index) {
+        closeLightbox();
+      } else if (currentIndex > index) {
+        currentIndex--;
+      }
+    }
+  }
+
+  // Add image to array and update gallery/localStorage
+  function addImage(src, alt = "User uploaded image") {
+    images.push({src, alt});
+    saveImages();
+    renderGallery();
+  }
+
+  // Open lightbox at given index
+  function openLightbox(index) {
+    if(index < 0 || index >= images.length) return;
+    currentIndex = index;
+    lightboxImg.src = images[index].src;
+    lightboxImg.alt = images[index].alt || '';
+    lightbox.classList.add('active');
+    closeBtn.focus();
+  }
+
+  // Close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    lightboxImg.alt = '';
+    const galleryItems = gallery.querySelectorAll('.gallery-item img');
+    if(currentIndex >= 0 && galleryItems[currentIndex]) {
+      galleryItems[currentIndex].focus();
+    }
+  }
+
+  // Show previous image in lightbox
+  function showPrev() {
+    if(images.length === 0) return;
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt || '';
+  }
+
+  // Show next image in lightbox
+  function showNext() {
+    if(images.length === 0) return;
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt || '';
+  }
+
+  // Handle file input change event
+  fileInput.addEventListener('change', e => {
+    const files = Array.from(e.target.files);
+    files.forEach(file => {
+      if(!file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = event => {
+        addImage(event.target.result, file.name);
+      };
+      reader.readAsDataURL(file);
+    });
+    fileInput.value = '';
+  });
+
+  // Upload button triggers file input
+  uploadBtn.addEventListener('click', () => {
+    fileInput.click();
+  });
+
+  // Lightbox buttons & keyboard controls
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  document.addEventListener('keydown', e => {
+    if(!lightbox.classList.contains('active')) return;
+    if(e.key === 'Escape') closeLightbox();
+    else if(e.key === 'ArrowLeft') showPrev();
+    else if(e.key === 'ArrowRight') showNext();
+  });
+
+  lightbox.addEventListener('click', e => {
+    if(e.target === lightbox) closeLightbox();
+  });
+
+  // Initialize gallery on page load
+  loadImages();
+  renderGallery();
+
+})();
+</script>
+
+</body>
+</html>

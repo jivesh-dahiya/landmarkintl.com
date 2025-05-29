@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Official website of Landmark International School." />
+  <meta name="keywords" content="Landmark International School, education, admissions, campus life, programs" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Landmark International School</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f5fb;
+      color: #1c3d6b;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .navbar {
+      background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      padding: 1rem 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border: white 4px solid;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      justify-content: center;
+    }
+    .navbar li a {
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .navbar li a:hover {
+      background-color: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    }
+    a {
+      color: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: white;
+      display: block;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+    a:hover {
+      color: whitesmoke;
+    }
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1300px; /* Increased from 1100px */
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Hero Section */
+    header.hero {
+      background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      color: #fff;
+      padding: 100px 40px 70px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 2px 15px rgba(20, 80, 149, 0.3);
+      margin-bottom: 60px;
+      max-width: 1250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header.hero h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      animation: slideDownFade 1s ease forwards;
+    }
+    header.hero p {
+      font-size: 1.3rem;
+      max-width: 750px;
+      margin: 0 auto;
+      color: #cbd7eb;
+      font-weight: 500;
+      line-height: 1.7;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.15);
+    }
+
+    /* Section base */
+    section {
+      margin-bottom: 80px;
+      max-width: 100%;
+    }
+    section h2 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      position: relative;
+      padding-bottom: 6px;
+      color: #7e0a2f;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100px;
+      border-radius: 4px;
+      background: #ff3aa0;
+      box-shadow: 0 2px 10px rgba(58, 134, 255, 0.45);
+    }
+    section p {
+      font-size: 1.125rem;
+      color: #720a26;
+      max-width: 1240px;
+      margin-bottom: 18px;
+      font-weight: 400;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ul.values-list,
+    ul.sports-list,
+    ul.house-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 30px;
+      max-width: 1240px;
+      margin: 0 auto 28px;
+      padding-left: 0;
+      justify-content: center;
+    }
+    ul.values-list li,
+    ul.sports-list li,
+    ul.house-list li {
+      background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(58, 134, 255, 0.4);
+      flex: 1 1 180px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      max-width: 240px;
+    }
+    ul.values-list li:hover,
+    ul.sports-list li:hover,
+    ul.house-list li:hover {
+      background-color: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      cursor: default;
+      box-shadow: 0 6px 18px rgba(28, 61, 107, 0.6);
+    }
+
+    /* Section with image + text layout */
+    .section-row {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px auto 0;
+      max-width: 1240px;
+    }
+    .section-row.reverse {
+      flex-direction: row-reverse;
+    }
+    .section-text {
+      flex: 1 1 520px;
+      max-width: 600px;
+      min-width: 300px;
+    }
+    .section-text p:last-child {
+      margin-bottom: 0;
+    }
+    .section-image {
+      flex: 1 1 450px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(107, 6, 45, 0.5);
+      overflow: hidden;
+      background: white;
+      transition: box-shadow 0.4s ease;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    .section-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .section-image:hover {
+      box-shadow: 0 25px 60px rgba(107, 6, 45, 0.5);
+    }
+    .section-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Contact section */
+    .contact {
+      text-align: center;
+      font-size: 1.125rem;
+      color: #0a2342;
+      margin-top: 70px;
+      font-weight: 600;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 40px;
+    }
+    .contact a {
+      font-weight: 700;
+      color: #3a86ff;
+    }
+    .contact a:hover {
+      color: #1c3d6b;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .container {
+        padding: 0 30px 50px;
+      }
+      header.hero {
+        padding: 100px 30px 70px;
+      }
+      .section-row {
+        max-width: 100%;
+      }
+      section h2, section p, ul.values-list, ul.sports-list, ul.house-list, .contact {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 900px) {
+      .section-row {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .section-text, .section-image {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      header.hero h1 {
+        font-size: 2.6rem;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes slideDownFade {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #933638;
+      color: #fff;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      color: #5f0523;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Welcome to Landmark International School</h1>
+    <p>
+      Dedicated to nurturing young minds, fostering creativity, and inspiring future leaders through excellence in education.
+    </p><br>
+    <br>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="hostel.html">Hostel Details</a></li>
+        <li><a href="programs.html">Programs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Our Mission</h2>
+          <p>
+            To inspire and empower students to reach their full academic and personal potential. We cultivate a lifelong love for learning in a supportive, inclusive environment.
+          </p>
+          <p>
+            Our innovative teaching methods and dedicated educators help students develop critical thinking, creativity, and compassion—preparing them to thrive in a rapidly evolving global community.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="director2.jpg" alt="Students collaborating in classroom" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row reverse">
+        <div class="section-text">
+          <h2>Our Vision</h2>
+          <p>
+            To be a beacon of academic excellence and character development recognized nationally and internationally. We aim to create an environment where every student excels and is ready to make a positive impact in the world.
+          </p>
+          <p>
+            By promoting innovation and diversity, we strive to build a vibrant school community where values and ethics go hand-in-hand with knowledge and skills.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="WhatsApp Image 2025-05-28 at 15.13.49_704f77d4.jpg" alt="Vision and leadership concept with students" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Hostel Facility</h2>
+          <p>
+            Our top-tier hostel provides a safe and welcoming home away from home. Spacious rooms, healthy meals, and recreational areas nurture student well-being.
+          </p>
+          <p>
+            Experienced residential supervisors ensure a supportive atmosphere, helping students balance academics and social life comfortably within our vibrant community.<a href="hostel.html">Learn more about our hostel facilities</a>
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="IMG-20250528-WA0011.jpg" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row reverse">
+        <div class="section-text">
+          <h2>House System</h2>
+          <p>
+            Our House System fosters teamwork, leadership, and school spirit. Students belong to one of four houses: Soma, Veda, Shanti, and Shakti, competing throughout the year in academics, sports, and arts.
+          </p>
+          <ul class="house-list" aria-label="School Houses">
+            <li>Blue House</li>
+            <li>Yellow House</li>
+            <li>Red House</li>
+            <li>Green House</li>
+          </ul>
+          <p>
+            This system cultivates camaraderie, resilience, and communication skills, culminating in spirited competitions and celebrations.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="houses.png" alt="School House team competition" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Our Speciality</h2>
+          <p>
+            Landmark International School is renowned for its holistic approach to education, blending academic rigor with character development. Our curriculum emphasizes critical thinking, creativity, and ethical leadership.
+          </p>
+          <p>
+            We offer a wide range of extracurricular activities, including arts, music, and sports, ensuring every student finds their passion. Our state-of-the-art facilities and dedicated faculty create an inspiring environment for learning and growth.
+          </p>
+          <p>
+            Our commitment to diversity and inclusion fosters a vibrant community where every student feels valued and empowered to succeed.
+          </p>
+          <p>
+            With a focus on innovation and excellence, we prepare students to thrive in an ever-changing world, equipping them with the skills and values needed for future success.
+          </p>
+        </div>
+        <div class="section-image">
+          <video src="WhatsApp Video 2025-05-28 at 15.10.43_6cb93d88.mp4" autoplay height="500px" alt="School building and campus" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row reverse">
+        <div class="section-text">
+          <h2>Sports Program</h2>
+          <p>
+            Sports are integral to personal growth at Landmark International School. We offer football, basketball, cricket, swimming, athletics, and tennis with expert coaching and state-of-the-art facilities.
+          </p>
+          <p>
+            Our students learn discipline, teamwork, and leadership on and off the field, encouraging healthy competition and lifelong fitness habits.
+          </p>
+          <ul class="sports-list" aria-label="Sports Offered at Landmark International School">
+            <li>Football</li>
+            <li>Basketball</li>
+            <li>Cricket</li>
+            <li>Swimming</li>
+            <li>Athletics</li>
+            <li>Tennis</li>
+          </ul>
+        </div>
+        <div class="section-image">
+          <img src="sportsposter.jpg" alt="Students playing football" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Our Programs</h2>
+          <p>
+            Our academic programs combine rigorous national standards with innovative approaches to nurture creativity and critical thinking across all levels.
+          </p>
+          <p>
+            Elective courses and extracurricular activities give students room to explore their unique talents and interests while developing leadership and service skills.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="programso.jpg" alt="Programs offered" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-row">
+        <div class="section-text">
+          <h2>Our Faculty</h2>
+          <p>
+            The heart of Landmark International School is our passionate and expert educators. Our faculty combines academic prowess with inspirational mentorship to guide every student’s journey.
+          </p>
+          <p>
+            Their dedication ensures a learning environment where curiosity flourishes and personal success is nurtured.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="ourfaculty.jpg" alt="Our Faculty" /> <!-- Replace with actual faculty image -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-text">
+        <h2>Our Values</h2>
+        <ul class="values-list" aria-label="Core Values of Landmark International School">
+          <li>Integrity</li>
+          <li>Respect</li>
+          <li>Excellence</li>
+          <li>Innovation</li>
+          <li>Community</li>
+        </ul>
+      </div>
+    </section>
+
+   <footer>
+    <p>&copy; 2023 Landmark International School. All rights reserved.</p>
+    <p>Follow us on <a href="https://www.facebook.com/greatInfrastructureSurroundedBySereneBeauty" target="_blank">Facebook</a></p>
+    <p>Designed by Landmark International School Web Team - JIVESH DAHIYA</p>
+  </footer>
+  </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Official website of Landmark International School." />
+  <meta name="keywords" content="Landmark International School, education, admissions, campus life, programs" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landmark International School</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Hero Section Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      width: auto;
+      font-family: 'Arial', sans-serif;
+      background-color: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    }
+    header.hero {
+      background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      color: #fff;
+      padding: 8rem 2rem 4rem; /* Adjusted padding for consistency */
+      text-align: center;
+      border-radius: 10px; /* Slightly adjusted for consistency */
+      box-shadow: 0 6px 25px rgba(20, 80, 149, 0.3); /* Consistent shadow */
+      margin: 2rem auto 4rem; /* Centered with consistent margins */
+      max-width: 1100px; /* Adjusted max-width for consistency */
+    }
+    header.hero h1 {
+      font-size: 3.5rem; /* Adjusted font size for consistency */
+      font-weight: 800;
+      margin-bottom: 1rem; /* Adjusted margin for consistency */
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 1s ease forwards; /* Changed animation for consistency */
+    }
+    header.hero h3 {
+      font-size: 1.5rem; /* Adjusted font size for consistency */
+      margin-bottom: 1.5rem; /* Adjusted margin for consistency */
+      color: #cbd7eb;
+      font-weight: 600;
+      line-height: 1.4; /* Adjusted line height for consistency */
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+    header.hero p {
+      font-size: 1.2rem; /* Adjusted font size for consistency */
+      max-width: 700px; /* Adjusted max-width for consistency */
+      margin: 0 auto;
+      color: #cbd7eb;
+      font-weight: 500;
+      line-height: 1.6; /* Adjusted line height for consistency */
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    }
+    hero-slider {
+      width: auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px; /* Consistent border radius */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    }
+    header.logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem; /* Adjusted margin for consistency */
+      animation: fadeInUp 1s ease forwards; /* Changed animation for consistency */
+
+    }
+
+    /* Navigation Styles */
+   .navbar {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.navbar li a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar li a:hover {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  color: whitesmoke;
+}
+
+/* Links */
+a {
+  color: #88212b;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+a:hover::after {
+  width: 100%;
+}
+    /* Main Section Styles */
+    main {
+      padding: 0 2rem;
+      max-width: 1100px; /* Adjusted max-width for consistency */
+      margin: 0 auto;
+      font-family: 'Arial', sans-serif;
+      color: #ad393f;
+      line-height: 1.6;
+      font-size: 1.125rem; /* Adjusted font size for consistency */
+      background: #f4f7fa; /* Light background for contrast */
+      border-radius: 10px; /* Consistent border radius */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+      padding: 2rem;
+      margin-top: 2rem; /* Consistent top margin */
+
+    }
+    section {
+      margin-bottom: 4rem;
+
+    }
+    h2 {
+     
+      font-size: 2.4rem;
+      color: #952647;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-align: left;
+      animation: fadeInUp 1s ease forwards; /* Changed animation for consistency */
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+    }
+    section.about h2 {
+      color: #ad393f;
+      text-underline-offset: 0.2rem;
+      text-decoration: underline; 
+       border-color: #8d2929;   
+      
+      animation: fadeInUp 1.2s ease forwards; /* Changed animation for consistency */
+
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      font-weight: bolder;
+      color: #7f1d2d;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      animation: fadeInUp 1.2s ease forwards; /* Changed animation for consistency */
+
+    }
+    .section-divider {
+      border: 1px solid #cbd7eb;
+      margin: 2rem 0;
+      width: 100%;
+      max-width: 1100px; /* Adjusted max-width for consistency */
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    /* Message Card Styles */
+   
+    .message-card {
+      transition: all 0.3s ease;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-color: #b981ab;
+      p{
+        color: #fff;
+        font-size: large;
+      }
+      h2{
+        color: #fff ;
+        font-size: 2rem;
+        border-color: #f4f7fa;
+
+
+      }
+      img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+        border: #e4e4e8 7px solid;
+      }
+      background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(243, 240, 240, 0.1);
+      transition: background 0.3s, box-shadow 0.3s;
+
+    }
+   
+    
+    .message-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+      
+    }
+    .message-card img:hover {
+     width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+      border: #e4e4e8 7px solid;
+      
+    }
+
+    /* Programs Section Styles */
+    .programs ul {
+      color: #88212b;
+      padding: 0;
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      border: #933638 5px solid;
+      list-style-type: disc;
+      margin-left: 20px;
+      color: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    }
+    .programs li {
+      color: #8d2929;
+      background: #f4f7fa;
+      border: 1px solid #cbd7eb;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.5rem;
+      flex: 1 1 calc(50% - 1rem); /* Adjusted for better responsiveness */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .programs h2 {
+      border-color: #ad393f;
+      font-size: 2.4rem;
+      color: #952647;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-align: left;
+      animation: fadeInUp 1s ease forwards; /* Changed animation for consistency */
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .links{
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      border:  #933638 5px solid;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1.2s ease forwards; /* Changed animation for consistency */
+
+    }
+    .links p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #8d2929;
+      margin-bottom: 1rem;
+      text-align: justify;
+      animation: fadeInUp 1.2s ease forwards; /* Changed animation for consistency */
+
+    }
+    .links h2 {
+      font-size: 2rem;
+      padding: 2px;
+      width: 30%;
+      border-radius: 8px;
+      border-color: #c8a7a7;
+      color: #ebebeb;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-align: left;
+      animation: fadeInUp 1s ease forwards; /* Changed animation for consistency */
+      background-color: #952647 ;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background:  #933638;
+      color: #fff;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      color: #cbd7eb;
+    }
+  </style>
+</head>
+<body>
+  
+  </section>
+  <header class="hero">
+    <div class="logo">
+      
+      <h1>Landmark International School</h1>
+      <h3 "><p>Welcome to the official website of Landmark International School. We aim to provide a platform for students, parents, and educators to stay connected </p></h3>
+    </div>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="hostel.html">Hostel Facilities</a></li>
+        <li><a href="programs.html">Programs Offered</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <main>
+    <section class="hero-slider">
+      <img src="WhatsApp Image 2025-05-28 at 15.13.49_704f77d4.jpg" alt="Hero Image" style="width: 100%; height: auto; border-radius: 10px;" /><br>
+<br>
+    <section class="about">
+      <h2>About Us</h2>
+      <p>Established with a vision to deliver excellence in education, Landmark International School offers a holistic learning environment that encourages curiosity, creativity, and confidence. Our state-of-the-art infrastructure, dedicated faculty, and student-first approach make us one of the most trusted institutions in the region.</p>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section class="messages">
+      <div class="message-card">
+        <img src="director2.jpg" alt="Director Photo" class="profile-img" />
+        <div>
+          <h2>Director's Message</h2>
+          <p>Welcome to Landmark International School! We are committed to providing an exceptional educational experience that prepares our students for a successful future. Our dedicated faculty and staff work tirelessly to create a supportive and engaging learning environment.</p>
+          <p>Education is not just about textbooks; it's about preparing young minds to face real-world challenges. At Landmark, we integrate academics with life skills, social responsibility, and innovation to shape our students into well-rounded individuals. We take pride in our inclusive community, where every learner feels valued and inspired to achieve their dreams.</p>
+        </div>
+      </div>
+
+      <div class="message-card">
+        <img src="director.jpg" alt="Principal Photo" class="profile-img" />
+        <div>
+          <h2>Principal's Message</h2>
+          <p>At Landmark International School, we believe that education should ignite curiosity and develop critical thinking. Our curriculum is designed to be both challenging and empowering, ensuring each student can discover their strengths and passion.</p>
+          <p>We encourage all students to participate in academic, artistic, and athletic activities that contribute to their overall development. Our teachers act as mentors, and our classrooms are hubs of innovation and active learning. We are excited about the future and confident that our students will shine bright in every walk of life.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section class="programs">
+      <h2>Programs Offered</h2>
+      <ul>
+        <li>Primary Education – Foundation of literacy, numeracy, and exploration.</li>
+        <li>Secondary Education – Advanced learning with a focus on critical subjects.</li>
+        <li>Higher Secondary Education – Preparation for college and professional life.</li>
+        <li>Extracurricular Activities – Sports, arts, leadership, and personal development.</li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h2>Admissions</h2>
+      <p>Our admissions process is designed to be transparent and welcoming. We invite you to <a href="admissions.html">visit our Admissions Page</a> to learn more about how to enroll your child at Landmark International School.</p>
+
+      <h2>Campus Life</h2>
+      <p>Our school offers a vibrant campus life that includes student-led clubs, inter-school competitions, sports meets, cultural festivals, and leadership camps. Learn more on our <a href="campus-life.html">Campus Life Page</a>.</p>
+
+      <h2>Contact Us</h2>
+      <p>Have any questions? Need guidance or information? Feel free to reach out via our <a href="contact.html">Contact Page</a>. We are here to help.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Landmark International School. All rights reserved.</p>
+    <p>Follow us on <a href="https://www.facebook.com/landmarkschool" target="_blank">Facebook</a> |Contact no.- </p>
+   
+    <p>Designed by Landmark International School Web Team-JIVESH DAHIYA</p>
+  </footer>
+</body>
+</html>
